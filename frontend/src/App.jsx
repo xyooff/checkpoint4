@@ -1,12 +1,34 @@
-import Home from "@pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/webSite/Home";
+import LayoutAdmin from "./components/layout/LayoutAdmin";
+import LayoutWebsite from "./components/layout/LayoutWebsite";
+import Skills from "./pages/webSite/Skills";
+import Portfolio from "./pages/webSite/Portfolio";
+import Contact from "./pages/webSite/Contact";
+import Users from "./pages/admin/Users";
+import Projects from "./pages/admin/Projects";
+import Language from "./pages/admin/Language";
+import LoginAdmin from "./pages/admin/LoginAdmin";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <Routes>
+        <Route path="/" element={<LayoutWebsite />}>
+          <Route path="/" element={<Home />} />
+          <Route path="competences" element={<Skills />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+        <Route path="/admin" element={<LoginAdmin />} />
+        <Route path="/admin/user" element={<LayoutAdmin />}>
+          <Route path="/admin/user" element={<Users />} />
+          <Route path="/admin/user/projects" element={<Projects />} />
+          <Route path="/admin/user/language" element={<Language />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
