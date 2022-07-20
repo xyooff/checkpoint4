@@ -6,8 +6,8 @@ import Skills from "./pages/webSite/Skills";
 import Portfolio from "./pages/webSite/Portfolio";
 import Contact from "./pages/webSite/Contact/Contact";
 import Users from "./pages/admin/users/Users";
-import Projects from "./pages/admin/Projects";
-import Language from "./pages/admin/Language";
+import Projects from "./pages/admin/Projects/Projects";
+import Language from "./pages/admin/Language/Language";
 import LoginAdmin from "./pages/admin/LoginAdmin";
 
 import "./App.css";

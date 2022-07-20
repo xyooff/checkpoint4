@@ -5,7 +5,7 @@ class CreateWebSiteManager extends AbstractManager {
 
   insert(item) {
     return this.connection.query(
-      `insert into ${CreateWebSiteManager.table} (title, url_picture, url_website, description, technicalDescription) values (?)`,
+      `insert into ${CreateWebSiteManager.table} (title, url_picture, url_website, description, technicalDescription) values (?,?,?,?,?)`,
       [
         item.title,
         item.url_picture,
