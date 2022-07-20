@@ -1,0 +1,30 @@
+.footer-web-site{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(rgba(30,30,30,.9),rgba(0,0,0,.9));
+}
+
+.footer-web-site-icons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links{
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+}
+
+.svg-iconsFooter{
+    font-size: 2em;
+    color: white;
+}
