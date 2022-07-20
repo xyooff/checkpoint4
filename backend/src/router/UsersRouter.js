@@ -1,12 +1,13 @@
 const express = require("express");
-const Authorization = require("../middleware/Autorization");
+// const Authorization = require("../middleware/Autorization");
 
 const { UsersController } = require("../controllers");
 
 const Usersrouter = express.Router();
 
-Usersrouter.get("/", Authorization, UsersController.browse);
-Usersrouter.post("/admin/", UsersController.login);
+Usersrouter.get("/", UsersController.browse);
+Usersrouter.post("/login", UsersController.login);
+Usersrouter.get("/logout", UsersController.logout);
 Usersrouter.get("/:id", UsersController.read);
 Usersrouter.put("/admin/:id", UsersController.edit);
 Usersrouter.post("/", UsersController.add);

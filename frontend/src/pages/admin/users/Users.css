@@ -1,0 +1,26 @@
+.users-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+.users-form-div-label{
+display: flex;
+justify-content: center;
+}
+
+.users-from-p{
+    width: 100px;
+    margin-right: 10px;
+}
+
+.users-form-input{
+    margin-top: 10px;
+}
+
+.users-form-label-input{
+    width: 230px;
+    padding: 6px;
+}

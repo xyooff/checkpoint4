@@ -19,15 +19,15 @@ class UsersManager extends AbstractManager {
 
   update(item) {
     return this.connection.query(
-      `update ${UsersManager.table} set firstname = ?, lastname = ?, email=?, phoneNumber = ?, postalcode = ?, role = ? where id = ?`,
+      `update ${UsersManager.table} set firstname = ?, lastname = ?, email=?, phoneNumber = ?, pays = ?, role = ? where id = ?`,
       [
         item.firstname,
-        item.id,
         item.lastname,
         item.email,
         item.phoneNumber,
-        item.postaslcode,
+        item.pays,
         item.role,
+        item.id,
       ]
     );
   }
