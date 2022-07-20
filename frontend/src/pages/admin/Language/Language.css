@@ -1,0 +1,28 @@
+.language-all{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.language-img{
+    width: 8vh;
+}
+.language-all-cards{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.language-add-all{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.language-add-file{
+    margin-top: 20px;
+}
+
+#language-submit{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

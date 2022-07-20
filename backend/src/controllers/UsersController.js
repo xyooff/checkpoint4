@@ -34,7 +34,6 @@ class UsersController {
 
   static login = async (req, res) => {
     const { email, password } = req.body;
-
     if (!email || !password) {
       res.status(400).send({ error: "Please specify both email and password" });
     }
@@ -182,6 +181,10 @@ class UsersController {
         console.error(err);
         res.sendStatus(500);
       });
+  };
+
+  static logout = (req, res) => {
+    res.clearCookie("access_token").sendStatus(204);
   };
 }
 

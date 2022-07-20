@@ -3,10 +3,10 @@ const AbstractManager = require("./AbstractManager");
 class LanguageManager extends AbstractManager {
   static table = "Language";
 
-  insert(item) {
+  insert(title, item) {
     return this.connection.query(
       `insert into ${LanguageManager.table} (name, url_language) values (?,?)`,
-      [item.title, item.url_language]
+      [title, item]
     );
   }
 

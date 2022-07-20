@@ -33,7 +33,7 @@ app.use(router);
 app.use("/users", UserRouter);
 
 // api routes languages
-app.use("/LanguageRouter", LanguageRouter);
+app.use("/Language", LanguageRouter);
 
 // api routes projects
 app.use("/projects", CreateWebSiteRouter);

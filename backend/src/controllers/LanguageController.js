@@ -49,17 +49,17 @@ class LanguageController {
   };
 
   static add = (req, res) => {
-    const item = req.body;
-
+    const item = req.body.title;
+    const url = req.files.path;
     // TODO validations (length, format...)
 
-    models.Language.insert(item)
+    models.Language.insert(item, url)
       .then(([result]) => {
-        res.status(201).send({ ...item, id: result.insertId });
+        res.status(201).send({ item, url, id: result.insertId });
       })
       .catch((err) => {
         console.error(err);
-        res.sendStatus(500);
+        res.Status(406).send("mauvais format d'image");
       });
   };
 

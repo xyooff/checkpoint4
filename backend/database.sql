@@ -10,12 +10,12 @@ CREATE TABLE `users` (
   `email` varchar(255) UNIQUE,
   `password` varchar(255),
   `phoneNumber` varchar(255) NOT NULL,
-  `postalcode` varchar(255),
+  `pays` varchar(255),
   `role` enum('ROLE_USER','ROLE_ADMIN') NOT NULL DEFAULT 'ROLE_USER'
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO
-  `users` (firstname, lastname, email, password, phoneNumber, postalcode, role)
+  `users` (firstname, lastname, email, password, phoneNumber, pays, role)
 VALUES
   (
     "Rodrigue",
@@ -23,9 +23,21 @@ VALUES
     "rodrigue_techer@yahoo.com", 
     "$argon2i$v=19$m=16,t=2,p=1$R3dkZGRIRlM2ZFNzclJYbQ$Mfep1cMEufQIqFCzy40SFg", 
     "0626050116", 
-    49360,
+    "France",
     "ROLE_ADMIN"
   );
+
+DROP TABLE IF EXISTS `projectFolio`;
+
+CREATE TABLE `projectFolio` (
+  `createWebSite_id` int,
+  `language_id` int
+)ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO
+  `projectFolio` (createWebSite_id, language_id )
+VALUES
+  (1,1), (1,2), (1,3), (1,4);
 DROP TABLE IF EXISTS `createWebSite`;
 CREATE TABLE `createWebSite` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
@@ -41,7 +53,7 @@ INSERT INTO
 VALUES
   (
     "Sharing is caring", 
-    "https://unsplash.com/photos/6J--NXulQCs", 
+    "https://www.photobox.fr/blog/wp-content/uploads/sites/3/2017/05/types-de-lumiere-photo-ideales.jpg", 
     "https://unsplash.com/photos/bYiw48KLbmw", 
     "Construction d’un site pour un espace de coworking Sharing is caring, un projet imaginé par nos formateurs pour le développement d’un site web en html, css, en groupe de 4 personnes avec un temp limiter", 
     " technical description Construction d’un site pour un espace de coworking Sharing is caring, un projet imaginé par nos formateurs pour le développement d’un site web en html, css, en groupe de 4 personnes avec un temp limiter."
@@ -68,20 +80,11 @@ VALUES
   ("php",
     "https://img2.freepng.fr/20180422/qze/kisspng-php-server-side-scripting-computer-software-genera-php-5adc5e78de7813.0517335015243915449112.jpg"
   );
-DROP TABLE IF EXISTS `projectFolio`;
 
-CREATE TABLE `projectFolio` (
-  `createWebSite_id` int,
-  `language_id` int
-)ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-INSERT INTO
-  `projectFolio` (createWebSite_id, language_id )
-VALUES
-  (1,1), (1,2), (1,3), (1,4);
 
 ALTER TABLE `projectFolio` ADD CONSTRAINT `createwebsite_ibfk_1` FOREIGN KEY (`createWebSite_id`) REFERENCES `createWebSite` (`id`);
+ALTER TABLE `projectFolio` ADD CONSTRAINT `projectfolio_ibfk_1` FOREIGN KEY (`language_id`) REFERENCES `language` (`id`);
 
-ALTER TABLE `projectFolio` ADD FOREIGN KEY (`language_id`) REFERENCES `language`(`id`);
+
 
 
