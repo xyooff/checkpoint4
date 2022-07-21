@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBarWebSite.css";
-import logo from "../../assets/logoro.png";
+import logo from "../../assets/d.png";
 
 export default function NavBarWebSite() {
   return (
@@ -11,18 +11,26 @@ export default function NavBarWebSite() {
           <img className="logo-nav-bar" src={logo} alt="logo" />
         </div>
         <div className="nav-bar-links-all">
-          <Link className="nav-bar-links" to="/">
-            <p>Acceuil</p>
-          </Link>
-          <Link className="nav-bar-links" to="/competences">
-            <p>Compétences</p>
-          </Link>
-          <Link className="nav-bar-links" to="/portfolio">
-            <p>Portfolio</p>
-          </Link>
-          <Link className="nav-bar-links" to="/contact">
-            <p>Contact</p>
-          </Link>
+          <div className="nav-bar-links">
+            <Link className="nav-bar-links" to="/">
+              <p>Acceuil</p>
+            </Link>
+          </div>
+          <div className="nav-bar-links">
+            <Link className="nav-bar-links" to="/competences">
+              <p>Compétences</p>
+            </Link>
+          </div>
+          <div className="nav-bar-links">
+            <Link className="nav-bar-links" to="/portfolio">
+              <p>Portfolio</p>
+            </Link>
+          </div>
+          <div className="nav-bar-links">
+            <Link className="nav-bar-links" to="/contact">
+              <p>Contact</p>
+            </Link>
+          </div>
         </div>
       </nav>
     </div>

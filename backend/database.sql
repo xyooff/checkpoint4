@@ -11,11 +11,12 @@ CREATE TABLE `users` (
   `password` varchar(255),
   `phoneNumber` varchar(255) NOT NULL,
   `pays` varchar(255),
+  `about` text,
   `role` enum('ROLE_USER','ROLE_ADMIN') NOT NULL DEFAULT 'ROLE_USER'
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO
-  `users` (firstname, lastname, email, password, phoneNumber, pays, role)
+  `users` (firstname, lastname, email, password, phoneNumber, pays, about, role)
 VALUES
   (
     "Rodrigue",
@@ -24,6 +25,7 @@ VALUES
     "$argon2i$v=19$m=16,t=2,p=1$R3dkZGRIRlM2ZFNzclJYbQ$Mfep1cMEufQIqFCzy40SFg", 
     "0626050116", 
     "France",
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "ROLE_ADMIN"
   );
 
@@ -44,8 +46,8 @@ CREATE TABLE `createWebSite` (
   `title` varchar(255),
   `url_picture` varchar(255),
   `url_website` varchar(255),
-  `description` varchar(255),
-  `technicalDescription` varchar(255)
+  `description` text,
+  `technicalDescription` text
 )ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO

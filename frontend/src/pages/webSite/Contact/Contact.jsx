@@ -61,6 +61,7 @@ export default function Contact() {
               name="lastName"
               value={lastName}
               required
+              placeholder="votre nom ici"
               onChange={(e) => setLastName(e.target.value)}
             />
           </label>
@@ -75,6 +76,7 @@ export default function Contact() {
               name="firstName"
               value={firstName}
               required
+              placeholder="votre prénom ici"
               onChange={(e) => setFirstName(e.target.value)}
             />
           </label>
@@ -90,6 +92,7 @@ export default function Contact() {
               name="email"
               value={email}
               required
+              placeholder="votre email ici"
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
@@ -104,6 +107,7 @@ export default function Contact() {
               name="message"
               value={message}
               required
+              placeholder="votre message ici"
               onChange={(e) => setMessage(e.target.value)}
             />
           </label>

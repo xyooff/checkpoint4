@@ -1,0 +1,12 @@
+.welcome-title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.module-text-docoration{
+    width: 300px;
+}

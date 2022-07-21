@@ -16,6 +16,19 @@ class UsersController {
       });
   };
 
+  static browseabout = (req, res) => {
+    const id = req.params;
+    models.users
+      .findabout(id)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     models.users
       .find(req.params.id)
