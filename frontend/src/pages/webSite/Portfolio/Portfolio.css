@@ -1,50 +1,49 @@
-.project-title{
-    font-family: var(--first-fonts-fira);
+.project-title {
+  font-family: var(--first-fonts-fira);
 }
-.project-img{
-    width: 40vh;
+.project-img {
+  width: 40vh;
 }
-.project-all{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50vh;
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 10px;
-    
+.project-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vh;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
 }
-.project-link{
-    text-decoration: none;
-    color: black;
-    border: 1px solid;
-    padding: 5px;
-    margin-top: 5vh;
-    padding: 10px;
-    border: 1px solid var(---color);
-    border-radius: 10px;
-    background-color: var(---color);
-    color: var(--secondary-color);
-}
-
-.project-link:hover{
-    border: 1px solid var(---color);
-    background-color: var(--secondary-color);
-    color: var(---color);
-}
-.prjects-all-link{
-    text-decoration: none;
-    color: black;
-}
-.prjects-all-link:hover{
-    text-decoration: none;
-    color: black;
-    transform: translate(10px) ;
+.project-link {
+  text-decoration: none;
+  color: black;
+  border: 1px solid;
+  padding: 5px;
+  margin-top: 5vh;
+  padding: 10px;
+  border: 1px solid var(---color);
+  border-radius: 10px;
+  background-color: var(---color);
+  color: var(--secondary-color);
 }
 
-.projects-all-map{
-    margin: 10vh;
-    display: flex;
-    flex-wrap: wrap;
-    transform: translate(10px) ;
+.project-link:hover {
+  border: 1px solid var(---color);
+  background-color: var(--secondary-color);
+  color: var(---color);
+}
+.prjects-all-link {
+  text-decoration: none;
+  color: black;
+}
+.prjects-all-link:hover {
+  text-decoration: none;
+  color: black;
+  transform: translate(10px);
+}
+
+.projects-all-map {
+  margin: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  transform: translate(10px);
 }

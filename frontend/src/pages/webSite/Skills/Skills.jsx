@@ -33,7 +33,7 @@ export default function Skills() {
       <div className="Skills-accordion">
         <h2 className="Skills-h2">Expérience</h2>
         <Accordion className="acoordion" defaultActiveKey="0">
-          <Accordion.Item  eventKey="0">
+          <Accordion.Item eventKey="0">
             <Accordion.Header>Moi de Juin</Accordion.Header>
             <Accordion.Body>
               <h4>Développement web full stack react node.js css</h4>

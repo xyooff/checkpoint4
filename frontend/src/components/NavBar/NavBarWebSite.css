@@ -1,63 +1,60 @@
-.nav-bar-wibe-site{
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    align-items: center;
-    margin-right: 10px;
+.nav-bar-wibe-site {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-right: 10px;
 }
-.nav-bar-links-all{
-    display: flex;
-    gap: 25px;
-    margin-right: 4vh;
-}
-
-.logo-nav-bar{
-    width: 25vh;
-    height: 18vh;
+.nav-bar-links-all {
+  display: flex;
+  gap: 25px;
+  margin-right: 4vh;
 }
 
-.nav-bar-links{
-    text-decoration: none;
-    color: black;
-
+.logo-nav-bar {
+  width: 25vh;
+  height: 18vh;
 }
 
-.nav-bar-links:hover{
-    background-color: white ;
-    padding: 3px;
-    border: 1px solid var(---color);
-    color: var(---color);
+.nav-bar-links {
+  text-decoration: none;
+  color: black;
 }
 
-#navweb{
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 15vh;
+.nav-bar-links:hover {
+  background-color: white;
+  padding: 3px;
+  border: 1px solid var(---color);
+  color: var(---color);
+}
+
+#navweb {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 15vh;
 }
 
 @media screen and (max-width: 37em) {
-    .nav-bar-wibe-site{
-        flex-direction: column;
-        
-    }
+  .nav-bar-wibe-site {
+    flex-direction: column;
+  }
 
-    .logo-nav-bar{
-        margin-top: -60px;
-        object-fit: contain;
-        width: 40vh;
-        height: 20vh;
-    }
+  .logo-nav-bar {
+    margin-top: -60px;
+    object-fit: contain;
+    width: 40vh;
+    height: 20vh;
+  }
 
-    #navweb{
-        height: 10vh;
-    }
-    .nav-bar-links-all{
-        margin-top: -90px;
-        display: flex;
-        gap: 10px;
-    }
-    
+  #navweb {
+    height: 10vh;
+  }
+  .nav-bar-links-all {
+    margin-top: -90px;
+    display: flex;
+    gap: 10px;
+  }
 }
