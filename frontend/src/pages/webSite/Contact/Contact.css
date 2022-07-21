@@ -3,8 +3,9 @@ div.div-welcome {
     flex-direction: column;
     align-items: start;
     padding: 2.3rem;
-    color: black;
     margin-bottom: 2rem;
+    background-color: inherit;
+
   }
   
   form.form-contact {
@@ -58,16 +59,17 @@ div.div-welcome {
   
   input.form-contact-input:focus,
   form textarea.form-contact-textarea:focus {
-    background: grey;
     border: 1px solid  black;
   }
   
   input.form-contact-input,
   form textarea.form-contact-textarea {
-    background: grey;
+    background: rgba(222, 169, 118.9);
+    color: aliceblue;
     border: none;
     width: 100%;
   }
+
   
   .div-message label {
     width: 100%;
@@ -88,20 +90,21 @@ div.div-welcome {
   
   button.btn-contact-submit {
     margin-top: 2rem;
+    margin-bottom: 2rem;
     border-radius: 0.5rem;
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 2px 2px 2px 2px;
     padding: 0.3rem 2rem;
     border: none;
-    background-color: grey;
-    color: wheat;
+    background-color: var(---color);
+    color: white;
     transition: all ease-in-out 0.3s;
     width: 16rem;
     height: 3rem;
   }
   
   button.btn-contact-submit:hover {
-    color: antiquewhite;
-    background-color: red;
+    color: var(---color);
+    background-color: white;
   }
   
   h1.h1-form-contact {
