@@ -1,18 +1,17 @@
-.div-welcome{
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    text-align: center;
+.div-welcome {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  text-align: center;
 }
 
-
-.div-welcome-h1{
-    color: white;
+.div-welcome-h1 {
+  color: white;
 }
 
 @media (max-width: 37rem) {
-    .div-welcome{
-        display: flex;
-        justify-content: center;
-    }
+  .div-welcome {
+    display: flex;
+    justify-content: center;
+  }
 }
