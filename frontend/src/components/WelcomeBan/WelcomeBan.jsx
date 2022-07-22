@@ -26,7 +26,7 @@ export default function WelcomeBan() {
   }, []);
   return (
     <div className="welcome-title">
-      <h1>Développeur Web</h1>
+      <h1 className="welcome-h1">Développeur Web</h1>
       <img
         className="module-text-docoration"
         src={welcomeLogo}

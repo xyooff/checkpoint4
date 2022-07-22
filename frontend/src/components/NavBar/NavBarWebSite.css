@@ -15,6 +15,13 @@
   width: 25vh;
   height: 18vh;
 }
+.logo-nav-bar{
+  transition: transform .2s;
+  margin: 10px;
+}
+.logo-nav-bar:hover{
+  transform: scale(1.5);
+}
 
 .nav-bar-links {
   text-decoration: none;
@@ -23,8 +30,7 @@
 
 .nav-bar-links:hover {
   background-color: white;
-  padding: 3px;
-  border: 1px solid var(---color);
+  text-decoration: underline overline var(---color);
   color: var(---color);
 }
 

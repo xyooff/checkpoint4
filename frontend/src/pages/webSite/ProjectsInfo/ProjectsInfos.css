@@ -31,3 +31,18 @@
 .project-h3 {
   border-bottom: 1px solid;
 }
+@media screen and (max-width: 37em) {
+  .project-title {
+    margin-left: 0px;
+  }
+  .project-complet-h1-img-link {
+    margin-left: 0px;
+    align-items: center;
+  }
+  .project-link {
+    margin-left: 0vh;
+  }
+  .project-link:hover {
+    margin-left: 0vh;
+  }
+}

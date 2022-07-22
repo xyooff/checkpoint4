@@ -6,6 +6,7 @@ import UploadFile from "../../../components/uploadFile/UploadFile";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
+  const [language, setLanguage] = useState([]);
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [sumUp, setSumUp] = useState("");
@@ -16,11 +17,23 @@ export default function Projects() {
       .get(`${import.meta.env.VITE_BACKEND_URL}/projects`)
       .then((res) => res.data)
       .then((data) => setProjects(data));
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/language`)
+      .then((res) => res.data)
+      .then((data) => setLanguage(data));
   }, []);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+  const languageprojectid = [];
+  const handleChange = (e) => {
+    const isChecked = e.target.checked;
+    const myIndex = languageprojectid.indexOf(Number(e.target.id));
+    if (isChecked === false) {
+      languageprojectid.splice(myIndex, 1);
+      return console.warn(languageprojectid);
+    }
+    languageprojectid.push(e.target.id);
+    return console.warn(languageprojectid);
+  };
 
   return (
     <div>
@@ -32,7 +45,7 @@ export default function Projects() {
               <img
                 className="project-card-img"
                 style={{ width: "200px" }}
-                src="https://www.photobox.fr/blog/wp-content/uploads/sites/3/2017/05/types-de-lumiere-photo-ideales.jpg"
+                src={project.url_picture}
                 alt="df"
               />
               <p className="project-card-description">{project.description}</p>
@@ -46,7 +59,7 @@ export default function Projects() {
           );
         })}
       </div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form>
         <div className="form-row" style={{ margin: "20px" }}>
           <div className="form-group col-md-6" style={{ margin: "20px" }}>
             <label htmlFor="inputtitle">titre</label>
@@ -91,14 +104,30 @@ export default function Projects() {
             />
           </div>
         </div>
-        <UploadFile
-          title={title}
-          link={link}
-          sumUp={sumUp}
-          description={description}
-          route={`${import.meta.env.VITE_BACKEND_URL}/projects`}
-        />
+        <div>
+          {language.map((item) => {
+            return (
+              <label key={item.id} htmlFor="language">
+                {item.name}
+                <input
+                  id={item.id}
+                  type="checkbox"
+                  value={item.name}
+                  onChange={(e) => handleChange(e)}
+                />
+              </label>
+            );
+          })}
+        </div>
       </form>
+      <UploadFile
+        title={title}
+        link={link}
+        sumUp={sumUp}
+        description={description}
+        languages={languageprojectid}
+        route={`${import.meta.env.VITE_BACKEND_URL}/projects`}
+      />
     </div>
   );
 }

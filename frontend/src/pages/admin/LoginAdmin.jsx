@@ -27,20 +27,23 @@ function LoginAdmin() {
         )
         .then((res) => res.data)
         .then(() => navigate("/admin/users"))
-        .catch((err) => {
-          swal(err.response.data.error);
+        .catch((error) => {
+          if (error.response.status === 401) {
+            swal("vous n'est pas autorisé a vous connecté");
+          }
+          swal(error.status);
         });
     } else {
       swal("Please specify both email and password");
     }
   };
   return (
-    <div>
-      <div className="div-welcome">
-        <h1 className="div-welcome-h1">ACCÈS ADMINISTRATEUR</h1>
+    <div className="loginAdmin">
+      <div className="div-welcome-all">
+        <h1 className="div-welcome-h1-login">ACCÈS ADMINISTRATEUR</h1>
       </div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form className="form-group" onSubmit={handleSubmit}>
+        <Form.Group className="mb-5 " controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
             onChange={(e) => setEmail(e.target.value)}
