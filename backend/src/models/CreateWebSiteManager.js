@@ -1,7 +1,7 @@
 const AbstractManager = require("./AbstractManager");
 
 class CreateWebSiteManager extends AbstractManager {
-  static table = "createWebSite";
+  static table = "CreateWebSite";
 
   insert(item, urlPicture) {
     return this.connection.query(
@@ -13,22 +13,6 @@ class CreateWebSiteManager extends AbstractManager {
         item.url_website,
         item.description,
         item.technicalDescription,
-      ]
-    );
-  }
-
-  insertalllanguage(item) {
-    return this.connection.query(
-      `insert into ${CreateWebSiteManager.table} (title, url_picture, url_website, description, technicalDescription, language.id) values (?,?,?,?,?)
-  (SELECT * FROM createWebSite INNER JOIN projectFolio ON createWebSite.id = createWebSite_id INNER JOIN language ON language.id = language_id where= id = ?)`,
-      [
-        item.title,
-        item.url_picture,
-        item.url_picture,
-        item.url_website,
-        item.description,
-        item.technicalDescription,
-        item.id,
       ]
     );
   }

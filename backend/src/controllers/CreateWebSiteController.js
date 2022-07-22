@@ -64,22 +64,6 @@ class CreateWebSiteController {
       });
   };
 
-  static adding = (req, res) => {
-    const item = req.body;
-    const urlpicture = req.files[0].path;
-    const urlFinal = `http://${process.env.DB_HOST}:${process.env.APP_PORT}/${urlpicture}`;
-    // TODO validations (length, format...)
-
-    models.CreateWebSite.insert(item, urlFinal)
-      .then(([result]) => {
-        res.status(201).send({ ...item, id: result.insertId });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static delete = (req, res) => {
     models.CreateWebSite.delete(req.params.id)
       .then(() => {
