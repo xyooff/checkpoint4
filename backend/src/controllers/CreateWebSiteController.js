@@ -13,7 +13,7 @@ class CreateWebSiteController {
   };
 
   static read = (req, res) => {
-    models.CreateWebSite.find(req.params.id)
+    models.CreateWebSite.findlanguage(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
@@ -50,10 +50,27 @@ class CreateWebSiteController {
 
   static add = (req, res) => {
     const item = req.body;
-
+    const urlpicture = req.files[0].path;
+    const urlFinal = `http://${process.env.DB_HOST}:${process.env.APP_PORT}/${urlpicture}`;
     // TODO validations (length, format...)
 
-    models.CreateWebSite.insert(item)
+    models.CreateWebSite.insert(item, urlFinal)
+      .then(([result]) => {
+        res.status(201).send({ ...item, id: result.insertId });
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static adding = (req, res) => {
+    const item = req.body;
+    const urlpicture = req.files[0].path;
+    const urlFinal = `http://${process.env.DB_HOST}:${process.env.APP_PORT}/${urlpicture}`;
+    // TODO validations (length, format...)
+
+    models.CreateWebSite.insert(item, urlFinal)
       .then(([result]) => {
         res.status(201).send({ ...item, id: result.insertId });
       })

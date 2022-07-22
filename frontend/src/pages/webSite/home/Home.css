@@ -113,3 +113,28 @@ p {
   stroke-linejoin: round;
   stroke-linecap: round;
 }
+
+@media screen and (max-width: 37em) {
+  .item{
+    display: none;
+  }
+  .welcome-about-h2-p-svg{
+    flex-direction: column;
+  }
+  .welcome-about-h2-p{
+    align-items: center;
+  }
+  .welcome-about {
+    align-items: center;
+  }
+  .module-service-both {
+    gap: 2vh;
+  }
+  .module-service-last {
+    gap: 2vh;
+  }
+  .module-service-contact-all-p {
+    align-items:center;
+  }
+
+}

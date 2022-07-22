@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
+import axios from "axios";
 import WelcomeBan from "../../../components/WelcomeBan/WelcomeBan";
 import "./Skills.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Skills() {
+  const [language, setLanguage] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/language`)
+      .then((res) => res.data)
+      .then((data) => setLanguage(data));
+  }, []);
   return (
-    <div>
+    <div className="Skills">
       <WelcomeBan />
       <div className="Skills-start">
         <div className="Skills-start-all">
@@ -29,7 +37,20 @@ export default function Skills() {
           alt="logo wildcodeschool"
         />
       </div>
-      <div className="Skills-pictos">picto language</div>
+      <div className="Skills-pictos">
+        {language.map((item) => {
+          return (
+            <div className="Skills-flex">
+              <h5>{item.name}</h5>
+              <img
+                className="skills-img"
+                src={item.url_language}
+                alt="language"
+              />
+            </div>
+          );
+        })}
+      </div>
       <div className="Skills-accordion">
         <h2 className="Skills-h2">Expérience</h2>
         <Accordion className="acoordion" defaultActiveKey="0">

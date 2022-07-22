@@ -20,7 +20,7 @@ export default function ProjectsInfos() {
       <div className="project-complete">
         {project.map((pro) => {
           return (
-            <div className="project-complet-div">
+            <div key={pro.id} className="project-complet-div">
               <div className="project-complet-h1-img-link">
                 <h1>Portfolio</h1>
                 <img

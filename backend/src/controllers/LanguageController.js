@@ -50,12 +50,13 @@ class LanguageController {
 
   static add = (req, res) => {
     const item = req.body.title;
-    const url = req.files.path;
+    const urlpicture = req.files[0].path;
+    const urlFinal = `http://${process.env.DB_HOST}:${process.env.APP_PORT}/${urlpicture}`;
     // TODO validations (length, format...)
 
-    models.Language.insert(item, url)
+    models.Language.insert(item, urlFinal)
       .then(([result]) => {
-        res.status(201).send({ item, url, id: result.insertId });
+        res.status(201).send({ item, urlFinal, id: result.insertId });
       })
       .catch((err) => {
         console.error(err);

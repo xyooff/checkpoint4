@@ -29,13 +29,13 @@ export default function Portfolio() {
           return (
             <div className="project-all" key={project.id}>
               <Link
-                className="prjects-all-link"
+                className="projects-all-link"
                 to={`/project/infos/${project.id}`}
               >
-                <p className="project-title">{project.title}</p>
+                <p className="project-title-name">{project.title}</p>
                 <img className="project-img" src={project.url_picture} alt="" />
               </Link>
-              <a className="project-link" href={project.url_website}>
+              <a className="project-link-website" href={project.url_website}>
                 voir le site
               </a>
             </div>

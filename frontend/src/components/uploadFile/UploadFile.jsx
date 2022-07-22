@@ -3,24 +3,33 @@ import axios from "axios";
 import "./UploadFile.css";
 import PropTypes from "prop-types";
 
-export default function UploadFile({ title, link, sumUp, description, route }) {
+export default function UploadFile({
+  title,
+  link,
+  sumUp,
+  description,
+  languages,
+  route,
+}) {
   const [image, setImage] = useState([]);
   function hundleChange(e) {
-    const value = e.target.files;
+    const value = e.target.files[0];
     setImage(value);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    const tableImage = Object.keys(image);
+    // const tableImage = Object.keys(image);
     formData.append("title", title);
     formData.append("url_website", link);
     formData.append("description", sumUp);
     formData.append("technicalDescription", description);
-    tableImage.map((item) => {
-      return formData.append("nomfichier", image[item]);
-    });
+    formData.append("language", languages);
+    formData.append("nomfichier", image);
+    // tableImage.map((item) => {
+    //   return formData.append("nomfichier", image[item]);
+    // });
     axios
       .post(route, formData, { whithCredentials: true })
       .then((res) => console.warn(res.data))
@@ -37,7 +46,6 @@ export default function UploadFile({ title, link, sumUp, description, route }) {
               type="file"
               name="monfichier"
               className="form-control"
-              multiple
               onChange={(e) => hundleChange(e)}
             />
           </label>
@@ -60,6 +68,7 @@ UploadFile.propTypes = {
   link: PropTypes.string,
   sumUp: PropTypes.string,
   description: PropTypes.string,
+  languages: PropTypes.arrayOf(PropTypes.number),
   route: PropTypes.string,
 };
 
@@ -68,5 +77,6 @@ UploadFile.defaultProps = {
   link: "",
   sumUp: "",
   description: "",
+  languages: [],
   route: "",
 };

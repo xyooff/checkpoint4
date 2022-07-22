@@ -1,7 +1,8 @@
 const argon2 = require("argon2");
 const Joi = require("joi");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 const models = require("../models");
+const { jwtSign } = require("../middleware/jwt");
 
 class UsersController {
   static browse = (req, res) => {
@@ -60,15 +61,13 @@ class UsersController {
           const { id, password: hash, role } = rows[0];
 
           if (await argon2.verify(hash, password)) {
-            const token = await jwt.sign(
+            const token = await jwtSign(
               {
                 id,
                 role,
               },
               process.env.JWT_AUTH_SECRET,
-              {
-                expiresIn: "1h",
-              }
+              { expiresIn: "1h" }
             );
             // response and HTTP cookie
             res
@@ -197,7 +196,7 @@ class UsersController {
   };
 
   static logout = (req, res) => {
-    res.clearCookie("access_token").sendStatus(204);
+    res.clearCookie("access_token").sendStatus(200);
   };
 }
 

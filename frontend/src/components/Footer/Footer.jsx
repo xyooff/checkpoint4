@@ -9,22 +9,28 @@ export default function Footer() {
     <div className="footer">
       <nav className="footer-web-site">
         <Link className="footer-links" to="/">
-          <p>Acceuil</p>
+          <p className="footer-p">Acceuil</p>
         </Link>
         <Link className="footer-links" to="/competences">
-          <p>Compétences</p>
+          <p className="footer-p">Compétences</p>
         </Link>
         <Link className="footer-links" to="/portfolio">
-          <p>Portfolio</p>
+          <p className="footer-p">Portfolio</p>
         </Link>
         <Link className="footer-links" to="/contact">
-          <p>Contact</p>
+          <p className="footer-p">Contact</p>
         </Link>
       </nav>
       <div className="footer-web-site-icons">
-        <BiEnvelope className="svg-iconsFooter" />
-        <FiLinkedin className="svg-iconsFooter" />
-        <FiGithub className="svg-iconsFooter" />
+        <Link to="/contact">
+          <BiEnvelope className="svg-iconsFooter" />
+        </Link>
+        <a href="www.linkedin.com/in/rodrigue-techer">
+          <FiLinkedin className="svg-iconsFooter" />
+        </a>
+        <a href="https://github.com/xyooff">
+          <FiGithub className="svg-iconsFooter" />
+        </a>
       </div>
     </div>
   );
