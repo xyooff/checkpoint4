@@ -10,6 +10,13 @@ class AbstractManager {
     ]);
   }
 
+  findabout(id) {
+    return this.connection.query(
+      `select about from  ${this.table} where id = ?`,
+      [id]
+    );
+  }
+
   findAll() {
     return this.connection.query(`select * from  ${this.table}`);
   }

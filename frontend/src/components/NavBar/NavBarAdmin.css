@@ -1,0 +1,16 @@
+.nav-bar-admin-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15vh;
+  background-color: black;
+}
+
+.nav-bar-admin-links {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-bar-admin-links:hover {
+  color: blueviolet;
+}

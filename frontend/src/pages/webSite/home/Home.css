@@ -1,0 +1,140 @@
+.module-service-all {
+  display: flex;
+  flex-direction: column;
+}
+
+.module-service-both {
+  display: flex;
+  gap: 10vh;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.module-service-last {
+  display: flex;
+  justify-content: center;
+  gap: 20vh;
+  margin-top: 50px;
+}
+
+p {
+  font-family: var(--secondary-fonts-montserra);
+}
+
+.module-service-contact-all-p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 60px 0px 60px 10px;
+}
+
+.welcome-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.module-service-button {
+  padding: 10px;
+  border: 1px solid var(---color);
+  border-radius: 10px;
+  background-color: var(---color);
+  color: var(--secondary-color);
+}
+.module-service-button:hover {
+  border: 1px solid var(---color);
+  background-color: var(--secondary-color);
+  color: var(---color);
+}
+
+.module-service-all-h3,
+.module-service-last-h3 {
+  color: var(---color);
+  font-family: var(--first-fonts-fira);
+}
+.welcome-about-link {
+  padding: 10px;
+  text-decoration: none;
+  border: 1px solid var(---color);
+  background-color: var(---color);
+  border-radius: 10px;
+  color: var(--secondary-color);
+}
+.welcome-about-link:hover {
+  border: 1px solid var(---color);
+  background-color: var(--secondary-color);
+  color: var(---color);
+}
+.module-service-contact,
+.welcome-about-h2 {
+  font-family: var(--first-fonts-fira);
+}
+.svg-linkedin {
+  color: var(---color);
+}
+.welcome-about-h2-p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
+  width: 75%;
+}
+.welcome-about-h2-p-svg {
+  display: flex;
+  align-items: center;
+}
+.svg-linkedin {
+  margin-left: 20px;
+}
+.welcome-link {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.welcome-about-p {
+  width: 80%;
+}
+/* flg;ml;mlg;zre */
+
+.container {
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+  background: var(---color);
+  border-radius: 30px;
+}
+
+.item {
+  width: 15%;
+  overflow: visible;
+  stroke: black;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+@media screen and (max-width: 37em) {
+  .item{
+    display: none;
+  }
+  .welcome-about-h2-p-svg{
+    flex-direction: column;
+  }
+  .welcome-about-h2-p{
+    align-items: center;
+  }
+  .welcome-about {
+    align-items: center;
+  }
+  .module-service-both {
+    gap: 2vh;
+  }
+  .module-service-last {
+    gap: 2vh;
+  }
+  .module-service-contact-all-p {
+    align-items:center;
+  }
+
+}
